@@ -292,7 +292,7 @@ function addDiv() {
 
             const x = `
             <div id=${i}>
-                <div class="btn2 btn__secondary2" onclick="showShort(${i})" id="main_${i}">
+                <div class="btn2 btn__secondary" onclick="showShort(${i})" id="main_${i}">
                     <div id="time_${i}">
                         ${ts}
                     </div>

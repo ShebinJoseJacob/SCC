@@ -94,8 +94,6 @@ html {
     }
 
     .components3 .failed{
-        grid-column: 3/6;
-        grid-row: 6/6;
         font-size: 1.4rem;
         color: #d11a2a;
     }
@@ -140,9 +138,10 @@ html {
         font-size: 1.4rem;
         background: none;
         font-family: inherit;
-        color: var(--greyDark);
+        color: var(black);
         margin-left: -1.5rem;
         opacity: 20%;
+        font-weight: 500;
     }
 
     .select__input::-moz-placeholder {
@@ -166,7 +165,7 @@ html {
     .icon__control {
         position: absolute;
         right: 21%;
-        margin-top: -3rem;
+        top: 19%;
     }
     
     .icon__account {
@@ -250,6 +249,7 @@ html {
         cursor: pointer;
         transition: 0.3s ease;
         font-size: 1.4rem;
+        border: none;
     }
     .btn__primary {
         grid-column: 1/2;
@@ -275,6 +275,7 @@ html {
     .btn__secondary:active {
         box-shadow: inset 0.2rem 0.2rem 0.5rem var(--greyLight-2), inset -0.2rem -0.2rem 0.5rem var(--white);
     }
+    
     .btn2 {
         width: 20rem;
         height: 6rem;
@@ -287,9 +288,10 @@ html {
         transition: 0.3s ease;
         font-size: 1.5rem;
         margin-top: 5%;
+        margin-left: 4rem;
     }
     .btn__secondary2 {
-        grid-column: 2/3;
+        grid-column: 2/2;
         grid-row: 1/2;
         color: var(--greyDark);
     }
@@ -435,7 +437,7 @@ html {
 
 @media screen and (max-width: 900px) {
     .container {
-        min-height: 100%;
+        max-height: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -443,6 +445,11 @@ html {
         background: var(--greyLight-1);
         padding-top: 50%;
     }
+
+    #mainDiv{
+        display: none;
+    }
+
     .components {
         width: 70%;
         height: 50%;
@@ -471,6 +478,34 @@ html {
         grid-row-gap: 2.5rem;
         align-items: center;
     }
+
+    .components3 {
+        width: 70%;
+        height: 50%;
+        border-radius: 3rem;
+        box-shadow: 0.8rem 0.8rem 1.4rem var(--greyLight-2), -0.2rem -0.2rem 1.8rem var(--white);
+        padding: 4rem;
+        display: grid;
+        grid-template-columns: repeat(autofit, min-content);
+        grid-template-rows: repeat(autofit, -webkit-min-content);
+        grid-template-rows: repeat(autofit, min-content);
+        grid-column-gap: 1.5rem;
+        grid-row-gap: 2.5rem;
+        align-items: center;
+        margin-top: -40%;
+    }
+
+    .components3 h3{
+        grid-column: 1/6; 
+        margin-bottom: 2rem;
+        font-size: 1.7rem;
+    }
+
+    .components3 .failed{
+        font-size: 1.5rem;
+        color: #d11a2a;
+    }
+
     .wrapper {
         width: inherit;
         height: inherit;
@@ -494,27 +529,16 @@ html {
         justify-content: center;
         cursor: pointer;
         transition: 0.3s ease;
+        border: none;
     }
-    .btn2 {
-        width: 20rem;
-        height: 6rem;
-        border-radius: 1rem;
-        box-shadow: 0.3rem 0.3rem 0.6rem var(--greyLight-2), -0.2rem -0.2rem 0.5rem var(--white);
-        display: grid;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        transition: 0.3s ease;
-        font-size: 1.5rem;
-        margin-top: 5%;
-        margin-right: 10%;
-    }
+    
     .btn__primary {
         grid-column: 1/2;
-        grid-row: 3/4;
+        grid-row: 3/6;
         background: var(--primary);
         box-shadow: inset 0.2rem 0.2rem 1rem var(--primary-light), inset -0.2rem -0.2rem 1rem var(--primary-dark), 0.3rem 0.3rem 0.6rem var(--greyLight-2), -0.2rem -0.2rem 0.5rem var(--white);
         color: var(--greyLight-1);
+        margin-bottom: 10rem;
     }
     .btn__primary:hover {
         color: var(--white);
@@ -524,8 +548,10 @@ html {
     }
     .btn__secondary {
         grid-column: 1/1;
-        grid-row: 4/4;
+        grid-row: 6/6;
         color: var(--greyDark);
+        margin-top: -2rem;
+
     }
     .btn__secondary:hover {
         color: var(--primary);
@@ -536,6 +562,145 @@ html {
     .btn p {
         font-size: 1.6rem;
     }
+
+    .btn2 {
+        width: 20rem;
+        height: 5rem;
+        border-radius: 1rem;
+        box-shadow: 0.3rem 0.3rem 0.6rem var(--greyLight-2), -0.2rem -0.2rem 0.5rem var(--white);
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: 0.3s ease;
+        font-size: 1.5rem;
+        margin-top: 5%;
+        margin-left: 3rem;
+    }
+
+    /*  FORM  */
+
+    .form {
+        grid-column: 1/6;
+        grid-row: 3/6;
+        }
+    
+        .form__input {
+            width: 25rem;
+            height: 4rem;
+            border: none;
+            border-radius: 1rem;
+            font-size: 1.4rem;
+            padding-left: 1.4rem;
+            box-shadow: inset 0.2rem 0.2rem 0.5rem var(--greyLight-2), inset -0.2rem -0.2rem 0.5rem var(--white);
+            background: none;
+            font-family: inherit;
+            color: var(--greyDark);
+            margin-bottom: 2rem;
+        }
+    
+        .form__input::-moz-placeholder {
+            color: var(--greyLight-3);
+        }
+    
+        .form__input:-ms-input-placeholder {
+            color: var(--greyLight-3);
+        }
+    
+        .form__input::placeholder {
+            color: var(--greyLight-3);
+        }
+    
+        .form__input:focus {
+            outline: none;
+            box-shadow: 0.3rem 0.3rem 0.6rem var(--greyLight-2), -0.2rem -0.2rem 0.5rem var(--white);
+        }
+        
+        .form p{
+            font-size: 1.5rem;
+            color: var(--primary-light);
+            margin-bottom: 1rem;
+        }
+
+    /* SELECT */
+   
+    .select__input {
+        width: 15rem;
+        height: 4rem;
+        border: none;
+        border-radius:1rem;
+        font-size: 1.4rem;
+        padding-left: 1.4rem;
+        box-shadow: inset 0.2rem 0.2rem 0.5rem var(--greyLight-2), inset -0.2rem -0.2rem 0.5rem var(--white);
+        background: none;
+        font-family: inherit;
+        color: var(--greyDark);
+        margin-bottom: 3rem;
+        grid-column: 1/1;
+        grid-row: 4/6;
+        margin-left: 5.5rem;
+    }
+
+    .select__input .select{
+        width: 15rem;
+        height: 4rem;
+        border: none;
+        border-radius: 1rem;
+        font-size: 1.4rem;
+        background: none;
+        font-family: inherit;
+        color: var(black);
+        margin-left: -1.5rem;
+        opacity: 20%;
+    }
+
+    .select__input::-moz-placeholder {
+        color: var(--greyLight-3);
+    }
+
+    .select__input:-ms-input-placeholder {
+        color: var(--greyLight-3);
+    }
+
+    .select__input::placeholder {
+        color: var(--greyLight-3);
+    }
+
+    .select__input:focus {
+        outline: none;
+        box-shadow: 0.3rem 0.3rem 0.6rem var(--greyLight-2), -0.2rem -0.2rem 0.5rem var(--white);
+    }
+
+    /* ICON */
+    .icon__control {
+        position: absolute;
+        right: 20%;
+        top: 27%;
+    }
+    
+    .icon__account {
+        width: 4rem;
+        height: 4rem;
+        border-radius: 50%;
+        box-shadow: 0.3rem 0.3rem 0.6rem var(--greyLight-2), -0.2rem -0.2rem 0.5rem var(--white);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2rem;
+        cursor: pointer;
+        color: var(--greyDark);
+        transition: all 0.5s ease;
+    }
+    
+    .icon__account:active {
+        box-shadow: inset 0.2rem 0.2rem 0.5rem var(--greyLight-2), inset -0.2rem -0.2rem 0.5rem var(--white);
+        color: var(--primary);
+    }
+    
+    .icon__account:hover{
+        color: var(--primary);
+    }
+
     /*  CLOCK  */
     .clock {
         grid-column: 1/2;
@@ -640,7 +805,7 @@ html {
         justify-content: center;
     }
     .icon2 {
-        display: grid;
+        display: none;
     }
     .icon__add {
         width: 4rem;

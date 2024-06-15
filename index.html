@@ -51,6 +51,11 @@
 
         </div>
         <div class="components2" id="components2">
+            <div class="icon__control">
+                <div class="icon__account" onclick="toggleDiv()">
+                    <ion-icon name="home"></ion-icon>
+                </div>
+            </div>   
             <div id="wrapper" class="wrapper">
             </div>
             <div class="icon" onclick="addStore()" id="timepicker">
@@ -76,14 +81,15 @@
 
         <div id="loginDiv" class="components3">
             <h3>Login to Particle</h3>
-            <div id="loginFailedDiv" style="display: none;" class="failed">
-                <p>Login failed, please try again.</p>
-            </div>
+            
             <form id="loginForm" class="form">
                 <input type="text" class="form__input" placeholder="Username or Email" id="userInput"><br>
                 <input type="password" class="form__input" placeholder="Password" id="passwordInput"><br>
                 <input type="submit" value="Login" class="btn btn__primary">
             </form>
+            <div id="loginFailedDiv" style="display: none;" class="failed">
+                <p>Login failed, please try again.</p>
+            </div>
         </div>
 
         <div id="otpDiv" class="components3" style="display: none;">
