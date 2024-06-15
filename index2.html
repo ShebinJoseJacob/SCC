@@ -1,0 +1,102 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Chicken Cage</title>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script type='module' src='https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js'></script>
+    <script nomodule='' src='https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.js'></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/mdtimepicker.css">
+    <script src="https://cdn.jsdelivr.net/npm/particle-api-js@8/dist/particle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/dmuy/MDTimePicker@2.0.1/dist/mdtimepicker.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/dmuy/MDTimePicker@2.0.1/dist/mdtimepicker.css">
+    <script src="assets/js/mdtimepicker.js"></script>
+</head>
+
+<body>
+    <div class="container" id="workContainer">
+        <div class="components" id="mainDiv">
+            <div class="clock">
+                <div class="hand hours"></div>
+                <div class="hand minutes"></div>
+                <div class="hand seconds"></div>
+                <div class="point"></div>
+                <div class="marker">
+                    <span class="marker__1"></span>
+                    <span class="marker__2"></span>
+                    <span class="marker__3"></span>
+                    <span class="marker__4"></span>
+                </div>
+            </div>
+            <div class="btn btn__primary" onclick="ledControl('on')">
+                <p>Feed Now</p>
+            </div>
+            <div class="select__input">
+                <select class="select" id="deviceSelect"></select>
+            </div>
+            <div class="btn btn__secondary" onclick="toggleDiv()">
+                <p>Schedule</p>
+            </div>
+
+            <div class="icon__control">
+                <div class="icon__account" id="logoutButton">
+                    <ion-icon name="log-out"></ion-icon>
+                </div>
+            </div>    
+
+        </div>
+        <div class="components2" id="components2">
+            <div id="wrapper" class="wrapper">
+            </div>
+            <div class="icon" onclick="addStore()" id="timepicker">
+                <div class="icon__add">
+                    <ion-icon name="add"></ion-icon>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="authContainer">
+        <div id="mainDiv" style="display: none;">
+            <h3>Control an LED!</h3>
+            <form>
+                <p>Device: <select id="deviceSelect"></select></p>
+                <p><button id="ledOnButton">LED On</button>&nbsp;<button id="ledOffButton">LED Off</button></p>
+                <p>&nbsp;</p>
+                <p><span id="statusSpan"></span></p>
+                <p>&nbsp;</p>
+                <p>Logged in as <span id="userSpan"></span> <button id="logoutButton">Log out</button></p>
+            </form>
+        </div>
+
+        <div id="loginDiv" class="components3">
+            <h3>Login to Particle</h3>
+            <div id="loginFailedDiv" style="display: none;" class="failed">
+                <p>Login failed, please try again.</p>
+            </div>
+            <form id="loginForm" class="form">
+                <input type="text" class="form__input" placeholder="Username or Email" id="userInput"><br>
+                <input type="password" class="form__input" placeholder="Password" id="passwordInput"><br>
+                <input type="submit" value="Login" class="btn btn__primary">
+            </form>
+        </div>
+
+        <div id="otpDiv" class="components3" style="display: none;">
+            <h3>Login to Particle</h3>
+            <form id="otpForm" class="form">
+                <input type="text" id="otpInput" placeholder="OTP From Authenticator App" class="form__input">
+                <input type="submit" value="Login" class="btn btn__primary">
+            </form>
+        </div>
+    </div>
+
+    <script id="rendered-js" src="assets/js/script.js"></script>
+    <script src="assets/js/mdtimepicker.js"></script>
+</body>
+
+</html>
